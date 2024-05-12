@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Slider</title>
+</head>
+<body>
+    <div class="slider">
+        <div class="thumbnail active" data-text="Apple"
+        data-color="#fc4a55" onclick="showBigImage(this)">
+            <img src="./Image/app.png" alt="">
+        </div>
+        <div class="thumbnail" data-text="Dragon Fruit"
+        data-color="#fb6cb2" onclick="showBigImage(this)">
+            <img src="./Image/dragon.webp" alt="">
+        </div>
+        <div class="thumbnail" data-text="Mongo"
+        data-color="#ffcc02" onclick="showBigImage(this)">
+            <img src="./Image/man.jpg" alt="">
+        </div>
+        <div class="thumbnail" data-text="Pineapple"
+        data-color="#ffb42b" onclick="showBigImage(this)">
+            <img src="./Image/pinapple.jpeg" alt="">
+        </div>
+        <div class="thumbnail" data-text="Watermalon"
+        data-color="#92ba3c" onclick="showBigImage(this)">
+            <img src="./Image/watermelon.jpeg" alt="">
+        </div>
+    </div>
+
+    <div class="text">Apple</div>
+    <div class="bigImage">
+        <img src="./Image/apple.webp" id="bigImage">
+    </div>
+
+    <script>
+        function showBigImage(thumbnail) {
+            let bigImage = document.getElementById('bigImage');
+            let thumb = thumbnail.querySelector('img');
+            let h2 = document.querySelector('h2');
+            let color = thumbnail.dataset.color;
+            let text = thumbnail.dataset.text;
+
+            bigImage.src = thumb.src;
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
